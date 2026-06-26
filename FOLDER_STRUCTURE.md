@@ -1,0 +1,70 @@
+# Folder Structure
+
+```text
+src/
+  App.jsx
+  main.jsx
+  index.css
+  assets/
+  components/
+    dashboard/
+      appointment/
+      meal/
+      medicine/
+      reports/
+      vitals/
+      water/
+    *.jsx
+  constants/
+    storageKeys.js
+  context/
+    AppContext.js
+    AppProvider.jsx
+  firebase/
+    firebaseConfig.js
+    services/
+      authService.js
+      firestoreService.js
+      storageService.js
+  hooks/
+    useApp.js
+    useInstallPrompt.js
+    useOnlineStatus.js
+    useStoredCollection.js
+    useUnreadNotifications.js
+  pages/
+    Dashboard.jsx
+    auth/
+      Login.jsx
+      Register.jsx
+  routes/
+    ProtectedRoute.jsx
+  services/
+    aiService.js
+    aiAssistantService.js
+    appointmentService.js
+    dataRepository.js
+    emergencyService.js
+    firebaseService.js
+    mealService.js
+    medicineService.js
+    notificationService.js
+    storageService.js
+    vitalsService.js
+    waterService.js
+  utils/
+    dateUtils.js
+    pdfExport.js
+    reportUtils.js
+```
+
+## Public Assets
+
+```text
+public/
+  favicon.svg
+  icons.svg
+  manifest.webmanifest
+  offline.html
+  sw.js
+```

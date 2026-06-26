@@ -1,0 +1,280 @@
+@import "tailwindcss";
+@import "react-loading-skeleton/dist/skeleton.css";
+
+:root {
+  font-family:
+    Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+    sans-serif;
+  color: #111827;
+  background: #fff8fb;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  --surface: #ffffff;
+  --surface-subtle: #fff8fb;
+  --line: #f6dce8;
+  --brand: #ec4899;
+  --brand-soft: #fbcfe8;
+  --brand-dark: #be185d;
+  --care-radius: 24px;
+  --care-radius-lg: 28px;
+  --care-font-size: 16px;
+  --care-motion-factor: 1;
+  --ink: #111827;
+  --muted: #6b7280;
+  --shadow-soft: 0 22px 70px rgb(190 24 93 / 0.1);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+button,
+input,
+select,
+textarea {
+  font: inherit;
+}
+
+button {
+  cursor: pointer;
+}
+
+button,
+a,
+input,
+select,
+textarea {
+  -webkit-tap-highlight-color: transparent;
+}
+
+img,
+svg,
+video,
+canvas,
+audio {
+  max-width: 100%;
+}
+
+audio {
+  min-height: 40px;
+  border-radius: var(--care-radius);
+}
+
+table {
+  border-collapse: collapse;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  font-size: var(--care-font-size);
+  background:
+    radial-gradient(circle at 12% 0%, rgb(236 72 153 / 0.14), transparent 28rem),
+    radial-gradient(circle at 88% 8%, rgb(251 207 232 / 0.45), transparent 26rem),
+    linear-gradient(180deg, #fff8fb 0%, #fff 48%, #fff8fb 100%);
+}
+
+button:focus-visible,
+a:focus-visible,
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible {
+  outline: 3px solid rgb(236 72 153 / 0.22);
+  outline-offset: 2px;
+}
+
+::selection {
+  background: rgb(236 72 153 / 0.18);
+}
+
+.app-shell {
+  background:
+    radial-gradient(circle at 10% -4%, rgb(236 72 153 / 0.14), transparent 28rem),
+    radial-gradient(circle at 92% 3%, rgb(251 207 232 / 0.55), transparent 24rem),
+    linear-gradient(180deg, #fff8fb 0%, #fff 44%, #fff8fb 100%);
+}
+
+.card-surface {
+  border: 1px solid var(--line);
+  background: rgb(255 255 255 / 0.9);
+  box-shadow: 0 18px 60px rgb(190 24 93 / 0.08), 0 1px 2px rgb(17 24 39 / 0.04);
+  backdrop-filter: blur(18px);
+}
+
+.premium-card {
+  border: 1px solid rgb(246 220 232 / 0.95);
+  background:
+    linear-gradient(180deg, rgb(255 255 255 / 0.96), rgb(255 255 255 / 0.9)),
+    #fff;
+  box-shadow: 0 20px 70px rgb(190 24 93 / 0.09), 0 1px 2px rgb(17 24 39 / 0.04);
+  backdrop-filter: blur(18px);
+}
+
+.premium-card,
+.card-surface {
+  border-radius: var(--care-radius-lg);
+}
+
+[data-card-style="solid"] .premium-card,
+[data-card-style="solid"] .card-surface {
+  background: #ffffff;
+  backdrop-filter: none;
+}
+
+[data-card-style="outlined"] .premium-card,
+[data-card-style="outlined"] .card-surface {
+  background: transparent;
+  box-shadow: none;
+}
+
+.care-gradient {
+  background:
+    radial-gradient(circle at 16% 18%, rgb(251 207 232 / 0.72), transparent 24rem),
+    linear-gradient(135deg, var(--brand) 0%, #f472b6 42%, #be185d 100%);
+}
+
+[data-gallery-background="linen"] .app-shell {
+  background:
+    radial-gradient(circle at 10% -4%, rgb(251 207 232 / 0.2), transparent 26rem),
+    linear-gradient(180deg, #fffaf7 0%, #fff 48%, #fff8fb 100%);
+}
+
+[data-gallery-background="petal"] .app-shell {
+  background:
+    radial-gradient(circle at 0% 0%, rgb(244 114 182 / 0.2), transparent 24rem),
+    radial-gradient(circle at 100% 0%, rgb(251 113 133 / 0.16), transparent 24rem),
+    linear-gradient(180deg, #fff5fa 0%, #fff 52%, #fff7fb 100%);
+}
+
+[data-gallery-background="clear"] .app-shell {
+  background: #ffffff;
+}
+
+[data-animations="off"] *,
+[data-animations="off"] *::before,
+[data-animations="off"] *::after {
+  animation-duration: 0.01ms !important;
+  animation-iteration-count: 1 !important;
+  scroll-behavior: auto !important;
+  transition-duration: 0.01ms !important;
+}
+
+.scrollbar-soft {
+  scrollbar-width: thin;
+  scrollbar-color: #f9a8d4 transparent;
+}
+
+.scrollbar-soft::-webkit-scrollbar {
+  height: 8px;
+  width: 8px;
+}
+
+.scrollbar-soft::-webkit-scrollbar-thumb {
+  border-radius: 999px;
+  background: #f9a8d4;
+}
+
+@media (max-width: 640px) {
+  .app-shell {
+    overflow-x: hidden;
+  }
+
+  .premium-card,
+  .card-surface {
+    box-shadow: 0 14px 44px rgb(190 24 93 / 0.08), 0 1px 2px rgb(17 24 39 / 0.04);
+  }
+}
+
+[data-theme="dark"] .app-shell {
+  background:
+    radial-gradient(circle at top left, rgb(96 165 250 / 0.12), transparent 28rem),
+    #0f172a;
+  color: #e5e7eb;
+}
+
+[data-theme="dark"] .app-shell header,
+[data-theme="dark"] .app-shell section,
+[data-theme="dark"] .app-shell aside > div {
+  border-color: #263244;
+  background-color: #111827;
+}
+
+[data-theme="dark"] .app-shell h1,
+[data-theme="dark"] .app-shell h2,
+[data-theme="dark"] .app-shell h3,
+[data-theme="dark"] .app-shell .text-slate-800,
+[data-theme="dark"] .app-shell .text-slate-700 {
+  color: #f9fafb;
+}
+
+[data-theme="dark"] .app-shell .text-slate-600,
+[data-theme="dark"] .app-shell .text-slate-500 {
+  color: #cbd5e1;
+}
+
+[data-theme="dark"] .app-shell input,
+[data-theme="dark"] .app-shell textarea,
+[data-theme="dark"] .app-shell select,
+[data-theme="dark"] .app-shell button.bg-white {
+  border-color: #334155;
+  background-color: #0f172a;
+  color: #f9fafb;
+}
+
+[data-theme="dark"] .app-shell .bg-slate-50,
+[data-theme="dark"] .app-shell .bg-slate-100 {
+  background-color: #182235;
+}
+
+[data-theme="dark"] .app-shell .card-surface {
+  border-color: #263244;
+  background: #111827;
+}
+
+[data-theme="dark"] .app-shell .premium-card,
+[data-theme="dark"] .app-shell .bg-white\/75,
+[data-theme="dark"] .app-shell .bg-white\/80,
+[data-theme="dark"] .app-shell .bg-white\/85,
+[data-theme="dark"] .app-shell .bg-white\/90,
+[data-theme="dark"] .app-shell .bg-white\/95 {
+  border-color: #263244;
+  background-color: rgb(17 24 39 / 0.92);
+}
+
+[data-theme="dark"] .app-shell .bg-pink-50,
+[data-theme="dark"] .app-shell .bg-pink-50\/35,
+[data-theme="dark"] .app-shell .bg-pink-50\/45,
+[data-theme="dark"] .app-shell .bg-pink-50\/50,
+[data-theme="dark"] .app-shell .bg-pink-50\/70 {
+  border-color: #334155;
+  background-color: rgb(30 41 59 / 0.72);
+}
+
+[data-theme="dark"] .app-shell .text-slate-950,
+[data-theme="dark"] .app-shell .text-slate-900 {
+  color: #f8fafc;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    scroll-behavior: auto !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+@media print {
+  header,
+  aside,
+  button {
+    display: none !important;
+  }
+
+  .app-shell {
+    background: white !important;
+  }
+}

@@ -1,0 +1,37 @@
+{
+  "name": "Care For Shweta",
+  "short_name": "Care",
+  "description": "Connected daily healthcare planning and tracking.",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "display_override": ["window-controls-overlay", "standalone", "minimal-ui"],
+  "background_color": "#fff8fa",
+  "theme_color": "#f43f5e",
+  "orientation": "portrait-primary",
+  "categories": ["health", "medical", "productivity"],
+  "shortcuts": [
+    {
+      "name": "Medicines",
+      "short_name": "Meds",
+      "description": "Open medicine tracking",
+      "url": "/dashboard?tab=medicines",
+      "icons": [{ "src": "/favicon.svg", "sizes": "any", "type": "image/svg+xml" }]
+    },
+    {
+      "name": "Reports",
+      "short_name": "Reports",
+      "description": "Open care reports",
+      "url": "/dashboard?tab=reports",
+      "icons": [{ "src": "/favicon.svg", "sizes": "any", "type": "image/svg+xml" }]
+    }
+  ],
+  "icons": [
+    {
+      "src": "/favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ]
+}
